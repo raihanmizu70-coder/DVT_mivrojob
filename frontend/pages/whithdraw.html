@@ -1,0 +1,86 @@
+<div class="page-header">
+    <h2>💳 Withdraw Money</h2>
+    <p>Transfer to your mobile wallet</p>
+</div>
+
+<div class="wallet-info">
+    <div class="stat-card">
+        <div class="stat-value" id="cashWalletBalance">৳0.00</div>
+        <div class="stat-label">Cash Wallet Balance</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-value">৳100</div>
+        <div class="stat-label">Minimum Withdraw</div>
+    </div>
+</div>
+
+<div class="amount-selection">
+    <h3>🎯 Select Amount</h3>
+    <div class="amount-options">
+        <div class="amount-option" onclick="selectAmount(100)">
+            <div class="amount">৳100</div>
+            <div class="receive-amount">Get: ৳80*</div>
+        </div>
+        <div class="amount-option" onclick="selectAmount(300)">
+            <div class="amount">৳300</div>
+            <div class="receive-amount">Get: ৳260*</div>
+        </div>
+        <div class="amount-option" onclick="selectAmount(500)">
+            <div class="amount">৳500</div>
+            <div class="receive-amount">Get: ৳440*</div>
+        </div>
+        <div class="amount-option" onclick="selectAmount(1000)">
+            <div class="amount">৳1000</div>
+            <div class="receive-amount">Get: ৳890*</div>
+        </div>
+    </div>
+</div>
+
+<div class="method-selection">
+    <h3>🏦 Select Method</h3>
+    <div class="method-options">
+        <div class="method-option" onclick="selectMethod('bkash')">
+            <span>💰</span>
+            <div>
+                <strong>bKash</strong>
+                <small>Instant Transfer</small>
+            </div>
+        </div>
+        <div class="method-option" onclick="selectMethod('nagad')">
+            <span>💸</span>
+            <div>
+                <strong>Nagad</strong>
+                <small>Instant Transfer</small>
+            </div>
+        </div>
+        <div class="method-option" onclick="selectMethod('rocket')">
+            <span>🚀</span>
+            <div>
+                <strong>Rocket</strong>
+                <small>DBBL Mobile Banking</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="withdrawal-form" id="withdrawalForm" style="display: none;">
+    <h3>📱 Enter Details</h3>
+    <input type="text" id="accountNumber" placeholder="Account Number" class="form-input">
+    <input type="text" id="accountName" placeholder="Account Holder Name" class="form-input">
+    
+    <div class="charges-summary" id="chargesSummary">
+        <!-- Charges will be calculated here -->
+    </div>
+    
+    <button class="btn" onclick="submitWithdrawal()">💸 Request Withdrawal</button>
+</div>
+
+<div class="withdrawal-rules">
+    <h4>📋 Withdrawal Rules</h4>
+    <ul>
+        <li>First withdrawal: 10% + ৳10 fixed fee</li>
+        <li>Regular withdrawal: 10% only</li>
+        <li>Minimum: ৳100</li>
+        <li>Processing: 24-48 hours</li>
+    </ul>
+</div>
