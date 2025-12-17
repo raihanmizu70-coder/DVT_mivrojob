@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 DVT Mini App - Earn Money</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-top">
+                <h1>🎯 DVT Mini App</h1>
+                <div class="balance-box">
+                    <span>💰 Balance: </span>
+                    <strong id="userBalance">৳0.00</strong>
+                </div>
+            </div>
+            <div class="user-info">
+                <span id="userName">Loading...</span>
+                <small id="userId"></small>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div id="content" class="content">
+            <!-- Content will be loaded dynamically -->
+            <div class="loading">Loading...</div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-bar">
+            <div class="nav-item active" onclick="loadPage('home')">
+                <span>🏠</span>
+                <small>Home</small>
+            </div>
+            <div class="nav-item" onclick="loadPage('tasks')">
+                <span>🧩</span>
+                <small>Tasks</small>
+            </div>
+            <div class="nav-item" onclick="loadPage('refer')">
+                <span>👥</span>
+                <small>Refer</small>
+            </div>
+            <div class="nav-item" onclick="loadPage('withdraw')">
+                <span>💳</span>
+                <small>Withdraw</small>
+            </div>
+            <div class="nav-item" onclick="loadPage('profile')">
+                <span>👤</span>
+                <small>Profile</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('taskModal')">&times;</span>
+            <h3 id="taskTitle"></h3>
+            <p id="taskDescription"></p>
+            <a id="taskLink" target="_blank" class="task-link">🎯 Click to Open Link</a>
+            <div class="screenshot-upload">
+                <h4>📸 Submit Screenshot</h4>
+                <input type="file" id="screenshotFile" accept="image/*" capture="environment">
+                <button onclick="uploadScreenshot()">📤 Upload & Submit</button>
+                <div id="uploadProgress"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
