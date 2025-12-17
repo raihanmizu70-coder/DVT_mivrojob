@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: dvt-backend
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: dvt_database
+          property: connectionString
+      - key: TELEGRAM_BOT_TOKEN
+        value: 8506336833:AAHqTala7chpEiJJ2W1s6lSN5qgwdJpC5b8
+      - key: TELEGRAM_ADMIN_ID
+        value: 6561117046
+      - key: ADMIN_PASSWORD
+        value: Mizu123@@
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        value: 764846719658924
+      - key: CLOUDINARY_API_SECRET
+        value: OmdiuCF8
+
+databases:
+  - name: dvt_database
+    plan: free
+    databaseName: dvt_database
+    user: dvt_user
