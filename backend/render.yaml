@@ -1,10 +1,11 @@
 services:
-  - type: web
-    name: dvt-backend
+  - type: worker
+    name: dvt-backend-worker
     env: python
     plan: free
+    rootDir: backend
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT
+    startCommand: python app.py
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -22,6 +23,8 @@ services:
         value: 764846719658924
       - key: CLOUDINARY_API_SECRET
         value: OmdiuCF8
+      - key: PORT
+        value: 8000
 
 databases:
   - name: dvt_database
