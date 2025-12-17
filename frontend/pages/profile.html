@@ -1,0 +1,72 @@
+<div class="page-header">
+    <h2>👤 My Profile</h2>
+    <p>Account information and settings</p>
+</div>
+
+<div class="profile-card">
+    <div class="profile-header">
+        <div class="avatar">👤</div>
+        <div class="profile-info">
+            <h3 id="profileName">Loading...</h3>
+            <p id="profileUsername">@username</p>
+        </div>
+    </div>
+    
+    <div class="profile-details">
+        <div class="detail-item">
+            <span>🆔 User ID:</span>
+            <span id="profileId">---</span>
+        </div>
+        <div class="detail-item">
+            <span>📅 Joined:</span>
+            <span id="joinDate">---</span>
+        </div>
+        <div class="detail-item">
+            <span>🎯 Referral Code:</span>
+            <span id="profileReferCode">---</span>
+        </div>
+    </div>
+</div>
+
+<div class="wallet-section">
+    <h3>💰 Wallet Balance</h3>
+    <div class="wallet-cards">
+        <div class="wallet-card">
+            <div class="wallet-amount" id="mainWallet">৳0.00</div>
+            <div class="wallet-label">Main Wallet</div>
+        </div>
+        <div class="wallet-card">
+            <div class="wallet-amount" id="cashWalletProfile">৳0.00</div>
+            <div class="wallet-label">Cash Wallet</div>
+        </div>
+    </div>
+    
+    <button class="btn btn-secondary" onclick="transferToCash()">💱 Transfer to Cash</button>
+</div>
+
+<div class="stats-section">
+    <h3>📊 Statistics</h3>
+    <div class="stats-grid">
+        <div class="stat-item">
+            <div class="stat-number" id="completedTasks">0</div>
+            <div class="stat-label">Tasks Done</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="totalEarnings">৳0.00</div>
+            <div class="stat-label">Total Earned</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="referralCount">0</div>
+            <div class="stat-label">Referrals</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="referralEarnings">৳0.00</div>
+            <div class="stat-label">Referral Bonus</div>
+        </div>
+    </div>
+</div>
+
+<div class="actions-section">
+    <button class="btn" onclick="contactSupport()">📞 Contact Support</button>
+    <button class="btn btn-secondary" onclick="viewHistory()">📋 View History</button>
+</div>
